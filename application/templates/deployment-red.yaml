@@ -11,7 +11,7 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      {{- .Values.currentTarget }}
+      {{- toYaml .Values.currentTarget | nindent 6 }}
       {{- include "test-app.selectorLabels" . | nindent 6 }}
   template:
     metadata:
