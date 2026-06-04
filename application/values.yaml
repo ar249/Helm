@@ -1,5 +1,5 @@
 currentTarget:
-  app: red
+  app: blue
   
 replicaCount: 1
 
