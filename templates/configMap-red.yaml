@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-red
+  labels:
+    app: red
+data:
+  blue.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Red Page</title>
+        <style>
+            body { background-color: #ff0000; color: white; font-family: sans-serif; text-align: center; padding-top: 100px; }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to the Red Page!</h1>
+    </body>
+    </html>
+  
