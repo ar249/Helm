@@ -61,12 +61,10 @@ spec:
             {{- toYaml . | nindent 12 }}
           {{- end }}
           volumeMounts:
-            {{- toYaml . | nindent 12 }}
             - name: html-volume
               mountPath: /usr/share/nginx/html
               readOnly: true
       volumes:
-        {{- toYaml . | nindent 8 }}
         - name: html-volume
           configMap:
             name: configmap-red
