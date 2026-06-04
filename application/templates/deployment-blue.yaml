@@ -1,10 +1,11 @@
+{{- if eq (index .Values.currentTarget "app") "blue" }}
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "test-app.fullname" . }}-blue
   labels:
     {{- include "test-app.labels" . | nindent 4 }}
-    app: blue
+    {{- toYaml .Values.currentTarget | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
@@ -20,6 +21,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
+        {{- toYaml .Values.currentTarget | nindent 8 }}
         {{- include "test-app.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
@@ -84,3 +86,4 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+{{- end }}
