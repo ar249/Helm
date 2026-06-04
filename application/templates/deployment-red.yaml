@@ -65,13 +65,11 @@ spec:
             - name: html-volume
               mountPath: /usr/share/nginx/html
               readOnly: true
-      {{- with .Values.volumes }}
       volumes:
         {{- toYaml . | nindent 8 }}
         - name: html-volume
           configMap:
             name: configmap-red
-      {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
