@@ -5,7 +5,7 @@ metadata:
   labels:
     app: blue
 data:
-  blue.html: |
+  index.html: |
     <!DOCTYPE html>
     <html lang="en">
     <head>
