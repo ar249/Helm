@@ -64,7 +64,7 @@ spec:
           volumeMounts:
             {{- toYaml . | nindent 12 }}
             - name: html-volume
-              mountPath: .
+              mountPath: /usr/share/nginx/html
               readOnly: true
           {{- end }}
       {{- with .Values.volumes }}
