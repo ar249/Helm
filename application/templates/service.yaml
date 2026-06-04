@@ -12,5 +12,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- .Values.currentTarget }}
+    {{- toYaml .Values.currentTarget | nindent 4 }}
     {{- include "test-app.selectorLabels" . | nindent 4 }}
